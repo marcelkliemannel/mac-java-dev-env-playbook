@@ -1,0 +1,35 @@
+---
+- name: Add SDKMAN java candidates to jenv
+  ansible.builtin.shell: |
+    set -e
+    set -o pipefail
+
+    for candidate in $(find $SDKMAN_DIR/candidates/java -d 1 -type d); do
+      echo "Add SDKMAN candidate $candidate to jenv"
+      jenv add $candidate
+    done
+  register: add_sdkman_candidates_to_jenv
+  changed_when: >-
+    'added' in add_sdkman_candidates_to_jenv.stdout
+  failed_when: >-
+    add_sdkman_candidates_to_jenv.rc != 0 or 'is not a valid version' in add_sdkman_candidates_to_jenv.stdout
+
+- name: Remove obsolete jenv versions
+  ansible.builtin.shell: |
+    set -e
+    set -o pipefail
+
+    candidates=($(find $SDKMAN_DIR/candidates/java/ -d 1 -type d -exec basename {} \; | tr -s "\n" " "))
+    echo ${candidates[@]}
+    for version in $HOME/.jenv/versions/*; do
+      versionLink=$(basename $(readlink -f "$version"))
+        if [[ ! " ${candidates[*]} " =~ " ${versionLink} " ]]; then
+          echo "Remove obsolete jenv version"
+          jenv remove $(basename $version)
+        fi
+    done
+  register: jenv_version_sync
+  changed_when: >-
+    ' removed' in jenv_version_sync.stdout
+  failed_when: >-
+    jenv_version_sync.rc != 0

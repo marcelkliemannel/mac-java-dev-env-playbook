@@ -1,0 +1,10 @@
+---
+- name: Install Homebrew formulas
+  community.general.homebrew:
+    name: "{{ homebrew_formulas + homebrew_additional_formulas }}"
+    state: present
+
+- name: Install Homebrew casks
+  community.general.homebrew_cask:
+    name: "{{ homebrew_casks + homebrew_additional_casks }}"
+    state: present

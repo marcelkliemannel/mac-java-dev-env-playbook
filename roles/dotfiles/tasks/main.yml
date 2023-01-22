@@ -1,0 +1,8 @@
+---
+- name: Create symbolic links to the user home dotfiles
+  ansible.builtin.file:
+    src: "{{ ansible_env.PWD }}/roles/dotfiles/files/{{ item }}"
+    dest: "{{ lookup('env', 'HOME') }}/{{ item }}"
+    state: link
+    force: true
+  loop: "{{ dotfiles_user_home }}"

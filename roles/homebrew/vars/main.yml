@@ -1,0 +1,14 @@
+---
+homebrew_formulas:
+  - jq
+  - kubectl
+  - k9s
+  - lazydocker
+  - node
+  - go
+  - jenv
+homebrew_casks:
+  - docker
+  - visual-studio-code
+  - postman
+  - the-unarchiver

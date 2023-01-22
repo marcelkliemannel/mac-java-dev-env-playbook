@@ -1,0 +1,6 @@
+---
+dotfiles_user_home:
+  - .zshrc
+  - .aliases
+  - .gitignore
+  - .vimrc

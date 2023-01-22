@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  name: Personal Mac development environment
+
+  vars_files:
+    - local.config.yml
+
+  roles:
+    - role: git
+      tags: [git]
+    - role: dotfiles
+      tags: [dotfiles]
+    - role: homebrew
+      tags: [homebrew]
+    - role: sdkman
+      tags: [sdkman]
+    - role: jenv
+      tags: [jenv]
