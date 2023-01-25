@@ -6,6 +6,8 @@
     - local.config.yml
 
   roles:
+    - role: macos
+      tags: [macos]
     - role: git
       tags: [git]
     - role: dotfiles

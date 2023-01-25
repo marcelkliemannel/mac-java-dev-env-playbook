@@ -1,0 +1,91 @@
+---
+- name: Increase window resize speed for Cocoa applications
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSWindowResizeTime
+    type: float
+    value: 0.001
+
+- name: Expand save panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+
+- name: Expand print panel by default
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: PMPrintingExpandedStateForPrint
+    type: bool
+    value: true
+
+- name: Check for software updates daily, not just once per week
+  community.general.osx_defaults:
+    domain: com.apple.SoftwareUpdate
+    key: ScheduleFrequency
+    type: int
+    value: 1
+
+- name: Save screenshots to the ~/Downloads
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "$HOME/Downloads"
+
+- name: Disable shadow in screenshots
+  community.general.osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+
+- name: Show hidden files by default in Finder
+  community.general.osx_defaults:
+    domain: com.apple.Finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+
+- name: Show all filename extensions in Finder
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+
+- name: Show status bar in Finder
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+
+- name: Set Finder sidebar icon size to 1
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSTableViewDefaultSizeMode
+    type: int
+    value: 1
+
+- name: Show path bar in the bottom of the Finder windows
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+
+- name: Set Dock minimize animation effect to 'scale'
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mineffect
+    type: string
+    value: "scale"
+
+- name: Disable application quarantine message
+  community.general.osx_defaults:
+    domain: com.apple.LaunchServices
+    key: LSQuarantine
+    type: bool
+    value: true
