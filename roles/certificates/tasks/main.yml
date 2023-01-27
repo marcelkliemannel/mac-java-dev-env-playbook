@@ -1,0 +1,18 @@
+---
+- name: Get all SDKMAN JDK cacerts files
+  ansible.builtin.find:
+    paths: "$SDKMAN_DIR/candidates/java"
+    patterns: "cacerts"
+    recurse: "yes"
+    file_type: "file"
+  register: sdkman_jdk_cacerts
+
+- name: Import certificate into all cacerts files
+  community.general.java_cert:
+    cert_path: "{{ item[0] }}"
+    keystore_path: "{{ item[1].path }}"
+    keystore_pass: changeit
+    cert_alias: "{{ item[0] | basename | split('.') | first }}"
+  with_community.general.cartesian:
+    - "{{ certificates }}"
+    - "{{ sdkman_jdk_cacerts.files }}"
