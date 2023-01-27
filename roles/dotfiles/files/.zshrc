@@ -1,11 +1,10 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Oh My Zsh
+# BEGIN P10K INSTANT PROMPT ANSIBLE MANAGED BLOCK
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+# END P10K INSTANT PROMPT ANSIBLE MANAGED BLOCK
 
-# Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(zsh-syntax-highlighting zsh-autosuggestions)
@@ -51,16 +50,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# Docker
-source /Users/marcel/.docker/init-zsh.sh || true
-
-# Additional configurations from the local system that are not under VCS
-if [ -f local-init.sh ]; then
-  source local-init.sh
-fi
-
 # Aliases
 if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
-export SDKMAN_OFFLINE_MODE=false

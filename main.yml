@@ -6,14 +6,14 @@
     - local.config.yml
 
   roles:
-    - role: macos
-      tags: [macos]
-    - role: git
-      tags: [git]
     - role: dotfiles
       tags: [dotfiles]
+    - role: git
+      tags: [git]
     - role: homebrew
       tags: [homebrew]
+    - role: macos
+      tags: [macos]
     - role: sdkman
       tags: [sdkman]
     - role: jenv
