@@ -3,20 +3,23 @@
   ansible.builtin.template:
     src: .zshrc.j2
     dest: "{{ lookup('env', 'HOME') }}/.zshrc"
+    mode: u+rw
   vars:
-    - oh_my_zsh_plugins: "{{ oh_my_zsh_enabled_plugins | join(' ') }}"
+    oh_my_zsh_plugins: "{{ oh_my_zsh_enabled_plugins | join(' ') }}"
 
 - name: Install Oh My Zsh
   ansible.builtin.git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
     depth: 1
+    version: master
 
 - name: Install external themes
   ansible.builtin.git:
     repo: "{{ item }}"
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/themes/{{ item | split('/') | last | split('.') | first }}"
     depth: 1
+    version: master
   with_items: "{{ oh_my_zsh_install_external_themes }}"
 
 - name: Install external plugins
@@ -24,4 +27,5 @@
     repo: "{{ item }}"
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/{{ item | split('/') | last | split('.') | first }}"
     depth: 1
+    version: master
   with_items: "{{ oh_my_zsh_install_external_plugins }}"
