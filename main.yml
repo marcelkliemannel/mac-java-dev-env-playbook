@@ -8,6 +8,8 @@
   roles:
     - role: dotfiles
       tags: [dotfiles]
+    - role: zsh
+      tags: [zsh]
     - role: git
       tags: [git]
     - role: homebrew

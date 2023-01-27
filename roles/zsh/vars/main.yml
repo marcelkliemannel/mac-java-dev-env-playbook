@@ -1,0 +1,15 @@
+---
+oh_my_zsh_install_external_themes:
+  - https://github.com/romkatv/powerlevel10k.git
+
+oh_my_zsh_install_external_plugins:
+  - https://github.com/zsh-users/zsh-autosuggestions.git
+  - https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+oh_my_zsh_enabled_plugins:
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
+  - copyfile
+  - copypath
+  - dirhistory
+  - history
