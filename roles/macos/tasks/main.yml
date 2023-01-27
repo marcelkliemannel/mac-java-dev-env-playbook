@@ -62,12 +62,12 @@
     type: bool
     value: true
 
-- name: Set Finder sidebar icon size to 1
+- name: Set Finder sidebar icon size to 2
   community.general.osx_defaults:
     domain: NSGlobalDomain
     key: NSTableViewDefaultSizeMode
     type: int
-    value: 1
+    value: 2
 
 - name: Show path bar in the bottom of the Finder windows
   community.general.osx_defaults:
