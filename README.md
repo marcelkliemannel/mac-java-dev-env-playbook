@@ -1,4 +1,4 @@
-# Personal Mac Development Environment Playbook
+# Personal Mac Environment Playbook
 
 ## Initial Setup
 
