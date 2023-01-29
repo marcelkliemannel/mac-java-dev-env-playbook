@@ -13,5 +13,40 @@
 
 - Font: [Meslo LG M Regular Nerd Font Complete.ttf](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf)
 - Theme: [Argonaut](https://github.com/lysyi3m/macos-terminal-themes#argonaut-download)
-- Install [Oh My Zsh](https://ohmyz.sh/#install)
-- Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
+
+## Configuration
+
+### .gradle/gradle.properties
+
+```properties
+signing.keyId=
+signing.password=
+signing.secretKeyRingFile=$HOME/.gnupg/secring.gpg
+gradle.publish.key=
+gradle.publish.secret=
+jetbrains.marketplace.token=
+jetbrains.sign-plugin.password=
+```
+
+### .m2/settings.xml
+
+```xml
+<settings>
+  <profiles>
+  <profile>
+    <id>signing</id>
+    <properties>
+      <gpg.keyname></gpg.keyname>
+      <gpg.passphrase></gpg.passphrase>
+    </properties>
+  </profile>
+  </profiles>
+  <servers>
+    <server>
+      <id>ossrh</id>
+      <username></username>
+      <password></password>
+    </server>
+  </servers>
+</settings>
+```
