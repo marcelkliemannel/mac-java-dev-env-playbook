@@ -1,4 +1,4 @@
-# Personal Mac Environment Playbook
+# Mac Java Development Environment Playbook
 
 ## Initial Setup
 
