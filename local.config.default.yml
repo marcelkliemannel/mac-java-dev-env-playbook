@@ -3,4 +3,6 @@ git_user_name:
 git_user_email:
 git_signing_enabled:
 git_signing_key_id:
+homebrew_additional_formulas: []
+homebrew_additional_casks: []
 certificates: []
