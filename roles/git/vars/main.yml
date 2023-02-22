@@ -5,3 +5,4 @@ git_aliases:
   - { name: ll, command: 'log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit' }
 git_signing_commit_default: "true"
 git_signing_program: gpg
+git_default_branch_name: main
