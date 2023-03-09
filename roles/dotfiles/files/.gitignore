@@ -3,4 +3,4 @@
 Thumbs.db
 .bundle
 .java-version
-.bkp
+*.bkp
