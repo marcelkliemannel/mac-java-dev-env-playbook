@@ -54,6 +54,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+# pyenv
+eval "$(pyenv init --path)"
+
 # Aliases
 if [ -f ~/.aliases ]; then
   source ~/.aliases
