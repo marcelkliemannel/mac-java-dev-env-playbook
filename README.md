@@ -11,7 +11,7 @@
 
 ### Terminal
 
-- Font: [Meslo LG M Regular Nerd Font Complete.ttf]([https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf](https://github.com/ryanoasis/nerd-fonts/releases) (download the latest `Meslo.zip`)
+- Font: [Meslo LG M Regular Nerd Font Complete.ttf](https://github.com/ryanoasis/nerd-fonts/releases) (download the latest `Meslo.zip`)
 - Theme: [Argonaut](https://github.com/lysyi3m/macos-terminal-themes#argonaut-download)
 
 ## Configuration
