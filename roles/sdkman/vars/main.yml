@@ -1,11 +1,11 @@
 ---
 sdkman_candidates:
-  - { candidate: java, version: '17.0.5-tem' }
-  - { candidate: java, version: '11.0.17-tem' }
-  - { candidate: gradle, version: '7.6' }
-  - { candidate: maven, version: '3.8.7' }
+  - { candidate: java, version: '17.0.7-tem' }
+  - { candidate: java, version: '11.0.19-tem' }
+  - { candidate: gradle, version: '8.2.1' }
+  - { candidate: maven, version: '3.9.3' }
 
 sdkman_default_candidates:
-  gradle: '7.6'
-  maven: '3.8.7'
-  java: '17.0.5-tem'
+  gradle: '8.2.1'
+  maven: '3.9.3'
+  java: '17.0.7-tem'
