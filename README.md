@@ -4,7 +4,7 @@
 
 - Install [Homebrew](https://brew.sh/).
 - Install Ansible: `brew install ansible`.
-- Clone this repository: `git clone https://github.com/marcelkliemannel/personal-mac-development-environment.git ~/.env`.
+- Clone this repository: `git clone https://github.com/marcelkliemannel/mac-java-dev-env-playbook.git ~/.env`.
 - Copy `local.config.default.yml` to `local.config.yml` and set the values.
 - Install Ansible requirements: `ansible-galaxy install -r requirements.yml`.
 - Run playbook: `ansible-playbook main.yml --ask-become-pass`. (It may be necessary to run the Playbook several times with a restart of the terminal in between during the initial installation.)
