@@ -3,3 +3,4 @@ dotfiles_user_home:
   - .aliases
   - .gitignore
   - .vimrc
+  - .gnupg/gpg-agent.conf
