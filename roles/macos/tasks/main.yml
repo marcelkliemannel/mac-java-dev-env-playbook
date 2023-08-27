@@ -1,4 +1,14 @@
 ---
+- name: Add TouchID as sudo authentication
+  become: yes
+  become_method: sudo
+  lineinfile:
+    path: /etc/pam.d/sudo
+    regexp: '^#.*'
+    line: 'auth       sufficient     pam_tid.so'
+    insertafter: yes
+    state: present
+
 - name: Increase window resize speed for Cocoa applications
   community.general.osx_defaults:
     domain: NSGlobalDomain
