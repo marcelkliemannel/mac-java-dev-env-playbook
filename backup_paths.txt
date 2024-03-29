@@ -1,0 +1,3 @@
+~/.ssh/
+~/.gradle/gradle.properties
+local.config.yml
