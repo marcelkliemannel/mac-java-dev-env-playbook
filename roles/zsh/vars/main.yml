@@ -5,11 +5,14 @@ oh_my_zsh_install_external_themes:
 oh_my_zsh_install_external_plugins:
   - https://github.com/zsh-users/zsh-autosuggestions.git
   - https://github.com/zsh-users/zsh-syntax-highlighting.git
+  - https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+  - https://github.com/marlonrichert/zsh-autocomplete.git
 
 oh_my_zsh_enabled_plugins:
   - zsh-syntax-highlighting
   - zsh-autosuggestions
+  - fast-syntax-highlighting
+  - zsh-autocomplete
   - copyfile
   - copypath
-  - dirhistory
   - history
