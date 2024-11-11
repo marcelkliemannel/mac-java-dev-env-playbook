@@ -13,7 +13,7 @@ homebrew_formulas:
 homebrew_casks:
   - docker
   - visual-studio-code
-  - postman
   - the-unarchiver
   - hex-fiend
   - typora
+  - 1password

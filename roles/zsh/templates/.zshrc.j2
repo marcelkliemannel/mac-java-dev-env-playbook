@@ -46,14 +46,6 @@ bindkey "^[b" backward-word
 # Only update once a week
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 
-# SDKMAN
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # pyenv
 eval "$(pyenv init --path)"
 
@@ -61,3 +53,11 @@ eval "$(pyenv init --path)"
 if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
+
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
