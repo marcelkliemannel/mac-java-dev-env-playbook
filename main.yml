@@ -18,7 +18,5 @@
       tags: [macos]
     - role: sdkman
       tags: [sdkman]
-    - role: jenv
-      tags: [jenv]
     - role: certificates
       tags: [certificates]

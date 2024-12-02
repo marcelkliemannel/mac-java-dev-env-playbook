@@ -54,10 +54,13 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [ -f ~/.sdkman-aliases ]; then
+  source ~/.sdkman-aliases
+fi
+
+if [ -f ~/.local-zshrc ]; then
+  source ~/.local-zshrc
+fi

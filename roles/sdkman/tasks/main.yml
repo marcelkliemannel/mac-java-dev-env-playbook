@@ -40,3 +40,12 @@
     'Uninstall candidate' in sdkman_remove_obsolete.stdout
   failed_when: >-
     sdkman_remove_obsolete.rc != 0
+
+- name: Create aliases for SDKMAN packages
+  ansible.builtin.copy:
+    dest: "{{ lookup('env', 'HOME') }}/.sdkman-aliases"
+    content: |
+      {% for entry in sdkman_candidates %}
+      alias {{ entry.alias | default(entry.candidate) }}="sdk use {{ entry.candidate }} {{ entry.version }}"
+      {% endfor %}
+    mode: '0755'
