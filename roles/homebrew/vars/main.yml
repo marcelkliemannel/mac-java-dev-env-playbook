@@ -10,6 +10,7 @@ homebrew_formulas:
   - pyenv
   - gnupg
   - pinentry-mac
+  - fzf
 homebrew_casks:
   - docker
   - visual-studio-code

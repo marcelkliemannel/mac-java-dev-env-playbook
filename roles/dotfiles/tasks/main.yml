@@ -6,3 +6,9 @@
     state: link
     force: true
   loop: "{{ dotfiles_user_home }}"
+
+- name: Create empty files if they do not exist
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: touch
+      loop: "{{ local_files }}"

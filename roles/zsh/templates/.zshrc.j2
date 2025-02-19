@@ -54,6 +54,22 @@ if [ -f ~/.aliases ]; then
   source ~/.aliases
 fi
 
+# fzf Commands
+function c() {
+    selected=$(cat ~/.fzfcommands | fzf --height=20% --reverse)
+    if [[ -n "$selected" ]]; then
+        echo "Run command: $selected"
+        eval "$selected"
+    fi
+}
+function cc() {
+    selected=$(cat ~/.fzfcommands | fzf)
+    if [[ -n "$selected" ]]; then
+        echo "$selected" | pbcopy
+        echo "Command copied: $selected"
+    fi
+}
+
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -4,3 +4,7 @@ dotfiles_user_home:
   - .gitignore
   - .vimrc
   - .gnupg/gpg-agent.conf
+
+local_files:
+  - .local-zshrc
+  - .fzfcommands
