@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This script creates a backup branch for each branch that is being _forced_ 
+# pushed. The backup branch is named "backup/<branch_name>" and contains the
+# previous commit of the branch before the push.
+while read local_ref local_sha remote_ref remote_sha; do
+    # Check if the push is a force push
+    if [ "$remote_sha" != "0000000000000000000000000000000000000000" ] && \
+       [ "$local_sha" != "$remote_sha" ]; then
+        
+        backup_branch="backup/${remote_ref##refs/heads/}"
+
+        # Create or update the backup branch
+        git branch -f "$backup_branch" "$remote_sha"
+        echo "Backup updated: $backup_branch"
+    fi
+done

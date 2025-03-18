@@ -42,6 +42,12 @@
     value: "{{ git_default_branch_name }}"
     scope: global
 
+- name: "Set Git global hooks path"
+  community.general.git_config:
+    name: core.hooksPath
+    value: "{{ git_global_hooks_path }}"
+    scope: global
+
 # Signing
 
 - name: 'Check mandatory Git signing configuration variables are defined'
@@ -93,3 +99,17 @@
     scope: global
     state: absent
   when: not git_signing_enabled
+
+# Git Hooks
+
+- name: Ensure global Git hooks directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/.git-hooks"
+    state: directory
+    mode: '0755'
+
+- name: Copy all Git hooks to global hooks directory
+  copy:
+    src: "files/git-hooks/"
+    dest: "{{ ansible_env.HOME }}/.git-hooks/"
+    mode: '0755'

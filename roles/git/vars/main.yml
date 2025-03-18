@@ -6,3 +6,4 @@ git_aliases:
 git_signing_commit_default: "true"
 git_signing_program: gpg
 git_default_branch_name: main
+git_global_hooks_path: ~/.git-hooks
